@@ -1,0 +1,36 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do-list</title>
+    <link rel="stylesheet" href="todolist.css">
+    
+</head>
+
+<body>
+
+    <h1 class="todo-list-header">My Todo-LIST</h1>
+    <div class="todo-list-guide">
+        <p>Input Your Task: Enter the task you wish to add to your ToDo list. This could be anything from a reminder to call a friend, a deadline for a project, or any other task you need to remember.</p>
+        <p>Set a Date: After entering your task, input the date when you plan to complete the task.</p>
+        <p>Add the Task: Once you've entered the task and set a date, select the 'Add' option to add your task to the list.</p>    
+        <p>Delete a Task: If you need to remove a task from your list, you can do so by selecting the 'Delete' option and choosing the task you wish to remove.</p> 
+    
+    </div>
+   
+    <div class="todo-list">
+            <input type="text" placeholder="Todo name" class="js-to-do-list todo-text">
+       
+            <input type="date" class="js-due-date todo-date">
+        
+            <button onclick="addToList()" class="todo-add-button" >Add</button>
+    </div>
+    
+    <div class="js-render-toDo todo-list-input"></div>
+
+
+<script src="todolist.js"></script>
+</body>
+
+</html>
