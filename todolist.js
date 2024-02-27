@@ -1,6 +1,6 @@
 let toDoList = [];
 
-window.onload = function() {
+window.onload = function () {
     const storedData = localStorage.getItem('toDoList');
     if (storedData) {
         toDoList = JSON.parse(storedData);
@@ -12,16 +12,22 @@ window.onload = function() {
 function addToList() {
     inputElem = document.querySelector('.js-to-do-list');
     inputElemDueDate = document.querySelector(".js-due-date");
-    let toDoValue = inputElem.value;
-    let dueDate = inputElemDueDate.value;
+    if (toDoValue === " " || dueDate === " ") {
+        alert("list is empty")
+    }
+    else {
+        let toDoValue = inputElem.value;
+        let dueDate = inputElemDueDate.value;
 
-    toDoList.push({
-        value: toDoValue,
-        date: dueDate,
-    });
-    inputElem.value = " ";
-    localStorage.setItem('toDoList', JSON.stringify(toDoList));
-    displayList();
+        toDoList.push({
+            value: toDoValue,
+            date: dueDate,
+        });
+        inputElem.value = " ";
+        localStorage.setItem('toDoList', JSON.stringify(toDoList));
+        displayList();
+    }
+
 }
 function deleteItem(index) {
     // Remove the item at the specified index from the to-do list
